@@ -10,7 +10,9 @@ public class TestEasy {
 		// TODO Auto-generated method stub
 
 		//plusMinus(new int[] {-4, 3, -9, 0, 4, 1 });
-		miniMaxSum(new int[] {256741038, 623958417, 467905213, 714532089, 938071625 });
+		//miniMaxSum(new int[] {256741038, 623958417, 467905213, 714532089, 938071625 });
+		int a = 5%3;
+		System.out.println(a);
 	}
 	
 	
