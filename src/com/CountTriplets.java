@@ -1,16 +1,14 @@
 package com;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class CountTriplets {
 
-	static long countTriplets(List<Long> arr, long r) {
+	static long countTriplets2(List<Long> arr, long r) {
 		int count = 0;
 		for(int i = 0; i< arr.size() - 2; i++) {
 			for (int j = i+1;j<arr.size() -1; j++) {
@@ -31,30 +29,69 @@ public class CountTriplets {
 	
 	static long countTriplets1(List<Long> arr, long r) {
 		int count = 0;
-		for(int i = 0; i< arr.size() - 2; i++) {
-			for (int j = i+1;j<arr.size() -1; j++) {
-				if(arr.get(i) * r == arr.get(j)) {
-					for(int k = j + 1; k<arr.size(); k++) {
-						if(arr.get(j) * r == arr.get(k)) {
-							count ++;
-						}
-					}
-				}
+		int counter[] = new int[arr.size()];
+		for(int i = 0; i< arr.size(); i++) {
+			
+			int a = findMultiple(r,arr.get(i));
+			if(a!=-1){
+				counter[a] = counter[a] + 1;
 			}
+		}
+		for(int i = 0; i< counter.length-2; i++) {
+			count = count + (counter[i]*counter[i+1]*counter[i+2]);
 		}
 
 		return count;
     }
 
+	
+	 static long countTriplets(List<Long> arr, long r) {
+	        long cnt = 0;
+	        Map<Long, Long> map = new HashMap<Long, Long>();
+	        Map<Long, Long> rMap = new HashMap<Long, Long>();
+	        for (long n : arr) {
+	        	System.out.println(n + " " + (n % r));
+	            if (n % r == 0) {
+	                long pre = n / r;
+	                Long cnt2 = rMap.get(pre);
+	                if (cnt2 != null) cnt += cnt2;
+	                
+	                Long cnt1 = map.get(pre);
+	                if (cnt1 != null) rMap.put(n, (rMap.get(n)==null?0:rMap.get(n)) + cnt1);
+	                
+	                System.out.println("COUNT " + cnt);
+	            }
+	            System.out.println(n + "-- " + ((map.get(n)==null?0:map.get(n)) + 1));
+	            map.put(n, (map.get(n)==null?0:map.get(n)) + 1);
+	        }
+	        return cnt;
+	    }
+
+	
+	static int findMultiple(long r,long val){
+		if(val == 1) return 0;
+		int multiplier = 1;
+		long result = 1;
+		while (result <= val){
+			result = result*r;
+			if(val == result) return multiplier;
+			multiplier++;
+		}
+		return -1;
+	}
+	
+	
+	
+	
     public static void main(String[] args) throws IOException {
         
 
 
-        int n = 5;
+        int n = 7;
 
-        long r = 2;
+        long r = 4;
 
-        String[] arrItems = new String[] {"1", "2", "1", "2", "4" };
+        String[] arrItems = new String[] {"1","2", "4", "16", "1", "4" , "16" };
 
         List<Long> arr = new ArrayList<Long>();
 
