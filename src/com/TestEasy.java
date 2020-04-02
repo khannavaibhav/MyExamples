@@ -2,7 +2,10 @@ package com;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 public class TestEasy {
 
@@ -11,10 +14,33 @@ public class TestEasy {
 
 		//plusMinus(new int[] {-4, 3, -9, 0, 4, 1 });
 		//miniMaxSum(new int[] {256741038, 623958417, 467905213, 714532089, 938071625 });
-		int a = 5%3;
-		System.out.println(a);
+		//int a = 5%3;
+		//System.out.println(a);
+		
+		arrays();
+		
 	}
 	
+	static void arrays() {
+		List<Integer> a = new ArrayList<Integer>();
+		List<Integer> b = new ArrayList<Integer>();
+		
+		a.add(1);
+		a.add(3);
+		
+		//b = new ArrayList<Integer>(a); 
+		//b = a;
+		b.addAll(a);
+		
+		a.set(0, 6);
+		
+		for(int i :a){
+			System.out.println("A " +i);
+		}
+		for(int i :b){
+			System.out.println("B " +i);
+		}
+	}
 	
 	static void miniMaxSum(int[] arr) {
         Arrays.sort(arr);

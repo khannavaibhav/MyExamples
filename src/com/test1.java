@@ -1,10 +1,33 @@
 package com;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+
 public class test1 {
 
 	public static void main(String[] args) {
 		//getCharCount("combination");
-		binarySearch(new int[] {1,2,3,4,5,6,7,8},1);
+		//binarySearch(new int[] {1,2,3,4,5,6,7,8},1);
+		DateFormat formatter = new SimpleDateFormat("MM-dd-yyyy");
+		DateFormat formatter2 = new SimpleDateFormat("dd/MM/yyyy");
+		try {
+			Date effectiveDate = formatter.parse("2020-02-05 13:46:43");
+			Date effectiveDate2 = formatter2.parse("12/01/0001");
+			Date a = new Date();
+			String as = formatter.format(a);
+			effectiveDate  = a;
+			effectiveDate2 = a;
+			System.out.println(a);
+			System.out.println(as);
+			
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
 	
 	
