@@ -1,8 +1,10 @@
 package com;
 
+import java.time.LocalDate;
 import java.util.HashSet;
-import java.util.Properties;
 import java.util.Set;
+
+import javax.swing.text.DateFormatter;
 
 
 public class TestGeneral {
@@ -31,6 +33,11 @@ public class TestGeneral {
 		a.add("1234");
 		a.add("1234");
 		System.out.println("SIZE "+a.size());
+		
+		DateFormatter df = new DateFormatter();
+		
+		LocalDate dt = LocalDate.of(2015, 8, 5);
+		System.out.print(dt.getDayOfWeek().name());
     	
 	}
 

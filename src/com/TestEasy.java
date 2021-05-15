@@ -17,9 +17,39 @@ public class TestEasy {
 		//int a = 5%3;
 		//System.out.println(a);
 		
-		arrays();
+		//arrays();
+		
+		finalInstances(1, new int[] {30,15,18,18,19,89,15,18,18,19,89,15,18,18,19,89,15,18,18,19,89,15,18,18,19,89});
 		
 	}
+	
+
+    /**
+     * @param instances
+     * @param averageUtil
+     * @return
+     */
+    public static int finalInstances(int instances, int[] averageUtil) {
+        int i = 0;
+        while(i<averageUtil.length){
+            if(averageUtil[i] <25 && instances>1){
+            	System.out.println("less "+i);
+                if(instances%2==1) instances++;
+                instances /=2;
+                i+=10;
+                
+            }
+            else if(averageUtil[i] >60 && instances<10E8){
+            	System.out.println("more "+i);
+                instances *=2;
+                i+=10;
+                
+            }
+            i++;
+        }
+        return instances;
+    }
+
 	
 	static void arrays() {
 		List<Integer> a = new ArrayList<Integer>();
