@@ -10,12 +10,16 @@ import java.util.PriorityQueue;
 
 public class FavoriteGenres {
 	
-//	Given a map Map<String, List<String>> userSongs with user names as keys and a list of all the songs that the user has listened to as values.
+//	Given a map Map<String, List<String>> userSongs with user names as keys and a list of all the songs 
+//	that the user has listened to as values.
 //
-//	Also given a map Map<String, List<String>> songGenres, with song genre as keys and a list of all the songs within that genre as values. The song can only belong to only one genre.
+//	Also given a map Map<String, List<String>> songGenres, with song genre as keys 
+//	and a list of all the songs within that genre as values. The song can only belong to only one genre.
 //
-//	The task is to return a map Map<String, List<String>>, where the key is a user name and the value is a list of the user's favorite genre(s). 
-//			Favorite genre is the most listened to genre. A user can have more than one favorite genre if he/she has listened to the same number of songs per each of the genres.
+//	The task is to return a map Map<String, List<String>>, where the key is a user name 
+//	and the value is a list of the user's favorite genre(s). 
+//			Favorite genre is the most listened to genre. A user can have more than one favorite genre 
+//	if he/she has listened to the same number of songs per each of the genres.
 
 	public static void main(String[] args) {
 		FavoriteGenres g = new FavoriteGenres();
@@ -44,6 +48,10 @@ public class FavoriteGenres {
 	
 	public Map<String, List<String>> criticalConnections(Map<String, List<String>> users,Map<String, List<String>> genres) {
 	        //6:40 - 7:24
+		
+		System.out.println(users);
+		System.out.println(genres);
+		
 		Map<String, List<String>> res = new HashMap<String, List<String>>();
 		
 		Map<String, String> songs =  new HashMap<String, String>();

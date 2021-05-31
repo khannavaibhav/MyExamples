@@ -19,15 +19,14 @@ public class SlowestKey {
 	 * @return
 	 */
 	public String solution() {
-		int[] releaseTimes = new int[] {9,29,49,50};
+		int[] releaseTimes = new int[] {9,29,45,50};
 		String keysPressed = "cbcd";
 		
-		int max = Integer.MIN_VALUE;
-        char res = 0;
-        int prev = 0;
-        System.out.println("" + res);
-        for(int i=0;i<releaseTimes.length;i++){
-            int x = releaseTimes[i]-prev;
+		int max = releaseTimes[0];
+        char res = keysPressed.charAt(0);
+        //int prev = 0;
+        for(int i=1;i<releaseTimes.length;i++){
+            int x = releaseTimes[i]-releaseTimes[i-1];
             if(max<x){
                 max = x;
                 res = keysPressed.charAt(i);
@@ -35,8 +34,8 @@ public class SlowestKey {
             else if(max==x && keysPressed.charAt(i) > res){
                 res = keysPressed.charAt(i);
             }
-            prev = releaseTimes[i];
         }
+        System.out.println(max);
         return "" + res;
     }
 	

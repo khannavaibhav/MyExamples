@@ -1,6 +1,11 @@
 package finalLeapP3;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
+
 
 public class AlgorithmSwap {
 
@@ -9,18 +14,66 @@ public class AlgorithmSwap {
 		
 		System.out.println(s.solution().toString());
 	}
-
+	int swaps = 0;
 	public String solution() {
-		int[] arr = new int[] {8, 2, 3};
+		int[] arr = new int[] {1,20,6,7,5,8,11,3};
+		
+		partitionAndMerge(arr, 0, arr.length-1);
+
+		for(int i:arr) {
+			System.out.print(i);
+		}
+		
+		return "END " + swaps ;
+	}
+	
+	void partitionAndMerge(int[] a,int start,int end) {
+		if(start>=end) return;
+		int mid = start+(end-start)/2;
+		partitionAndMerge(a,start,mid);
+		partitionAndMerge(a,mid+1,end);
+		mergeAndSort(a, start, mid, end);
+		
+	}
+	
+	void mergeAndSort(int[] a,int start,int mid,int end) {
+		int i = start;
+		int j = mid+1;
+		int k = start;
+		int[] tmp = new int[a.length];
+		
+		while(i<=mid && j<=end) {
+			if(a[i] > a[j]) {
+				swaps +=mid+1-i;
+				tmp[k++] = a[j++];
+			}
+			else {
+				tmp[k++] = a[i++];
+			}
+		}
+		while(i<=mid) {
+			tmp[k++] = a[i++];
+		}
+		while(j<=end) {
+			tmp[k++] = a[j++];
+		}
+		
+		for(i=start;i<=end;i++) {
+			a[i] = tmp[i];
+		}
+	}
+
+	public String bruteForce() {
+		int[] arr = new int[] {9,6,8,4};
 		
 		int swaps = 0;
 		for(int i = 0 ;i<arr.length-1;i++) {
 			for(int j = i+1;j<arr.length;j++) {
 				if(arr[i] > arr[j]) {
 					swaps++;
-					int tmp =arr[i];
-					arr[i] = arr[j];
-					arr[j] = tmp;
+//					int tmp =arr[i];
+//					arr[i] = arr[j];
+//					arr[j] = tmp;
 				}
 			}
 		}

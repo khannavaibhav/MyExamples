@@ -11,12 +11,29 @@ public class OptimizatingBoxWeight {
 		OptimizatingBoxWeight sm = new OptimizatingBoxWeight();
 		
 		int n = 6;
-		Integer[] arr = new Integer[]{5, 3, 2, 4, 1, 2};
+		Integer[] arr = new Integer[]{5, 3, 2, 4, 4,4};
 		Arrays.sort(arr, Collections.reverseOrder());
 		
+		int totalWeight = 0;
+		for(int w:arr) {
+			totalWeight+=w;
+		}
+		
+		int  i = 0;
+		int weight = 0;
+		List<Integer> res = new ArrayList<>();
+		while(weight<totalWeight/2) {
+			weight+=arr[i];
+			res.add(arr[i++]);
+		}
+		while(i>0 && arr[i-1] == arr[i] && i<arr.length) {
+			weight+=arr[i];
+			res.add(arr[i++]);
+		}
 		
 		
-		System.out.println("");
+		
+		System.out.println("" + res);
 	}
 }
 /*

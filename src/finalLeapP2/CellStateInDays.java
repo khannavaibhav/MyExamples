@@ -11,7 +11,7 @@ public class CellStateInDays {
 
 	public String solution() {
 		
-		int[] cell = new int[] {1, 0, 0, 0, 0, 1, 0, 0};
+		int[] cell = new int[] {1, 0, 1, 0, 0, 1, 0, 0};
 		int days = 1;
 		
 		for(int j=0;j<days;j++) {
@@ -37,10 +37,8 @@ public class CellStateInDays {
 	
 }
 /*
-Tom plays a game in which he throws a baseball at various blocks marked with a symbol. 
-Each block comes with a symbol which can be an integer, ‘X’, ‘+’, or ‘Z’. 
-Given a list of strings represent blocks, return the final score...
-
-https://aonecode.com/amazon-online-assessment-baseball-scorekeeping
+If pos-1 = 0 and pos+1 = 0 then pos = 0
+if pos-1 = 1 amd pos_1 = 1 then pos = 0
+if pos-1 != pos+1 then pos = 1
  * */
  

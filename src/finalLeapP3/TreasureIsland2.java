@@ -50,7 +50,7 @@ public class TreasureIsland2 {
 			for(int j = 0;j<a[0].length;j++) {
 				boolean[][] visited = new boolean[a.length][a[0].length];
 				if(a[i][j] == 'S') {
-					System.out.println("START at S");
+//					System.out.println("START at S");
 					Queue<int[]> q = new LinkedList<>();
 					q.offer(new int[] {i,j});
 					a[i][j] = 'D';
@@ -66,7 +66,7 @@ public class TreasureIsland2 {
 							int c = u[1];
 							p.add(r + " " +c +" # ");
 							visited[r][c] = true;
-							System.out.println(r + " "+c);
+//							System.out.println(r + " "+c);
 							if(a[r][c] == 'X') {
 								if(count+1<minCount) {
 									minCount = count;
@@ -78,6 +78,7 @@ public class TreasureIsland2 {
 							if(r<a.length-1 && a[r+1][c] != 'D' && !visited[r+1][c]) q.offer(new int[] {r+1,c});
 							if(c>0 && a[r][c-1] != 'D'  && !visited[r][c-1]) q.offer(new int[] {r,c-1});
 							if(c<a[0].length-1 && a[r][c+1] != 'D' && !visited[r][c+1]) q.offer(new int[] {r,c+1});
+							p.remove(p.size()-1);
 						}
 					}
 				}

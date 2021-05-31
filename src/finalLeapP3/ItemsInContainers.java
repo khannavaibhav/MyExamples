@@ -21,21 +21,22 @@ public class ItemsInContainers {
 		int[] endIndices = new int[] {5,6};
 		List<Integer> counts = new ArrayList<>();
 		for(int i =0;i<startIndices.length;i++) {
-			counts.add(countItems(s.substring(startIndices[i]-1,endIndices[i])));
+			counts.add(countItems(s,startIndices[i]-1,endIndices[i]-1));
 		}
 		
 		return "END"+counts;
 	}
 	
-	int countItems(String s) {
+	int countItems(String s,int start, int end) {
 		int count = 0;
 		int curr = 0;
-		boolean start = false;
-		for(char c:s.toCharArray()) {
-			if(c=='|') {
-				if(start) count+=curr;
+		boolean flag = false;
+		for(int i = start;i<=end;i++) {
+			
+			if(s.charAt(i)=='|') {
+				if(flag) count+=curr;
 				curr=0;
-				start = true;
+				flag = true;
 			}
 			else {
 				curr++;

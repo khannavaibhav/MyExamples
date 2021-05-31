@@ -59,6 +59,8 @@ Tom plays a game in which he throws a baseball at various blocks marked with a s
 Each block comes with a symbol which can be an integer, X, + or Z. 
 Given a list of strings represent blocks, return the final score...
 X - double from last throw
+Z - last throw did not happen
++ - add last 2
 
 
 https://aonecode.com/amazon-online-assessment-baseball-scorekeeping
