@@ -86,8 +86,7 @@ public class SplitStringIntoUniquePrimes {
 	    {
 	        if (primes[i])
 	        {
-	            for(int j = i * i;
-	                    j <= maxn; j += i)
+	            for(int j = i * i;j <= maxn; j += i)
 	                primes[j] = false;
 	        }
 	    }

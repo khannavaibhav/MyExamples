@@ -1,9 +1,10 @@
-package finalLeapP2;
+
 
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.lang3.tuple.Pair;
 
@@ -12,8 +13,6 @@ public class ACopy {
 	public static void main(String[] args) {
 		ACopy s = new ACopy();
 		
-		
-		
 		System.out.println(s.solution().toString());
 	}
 
@@ -21,6 +20,13 @@ public class ACopy {
 	 * @return
 	 */
 	public String solution() {
+		
+		String st = "12345I";
+		System.out.println(st.substring(st.length()-5));
+		
+		if(StringUtils.isNotBlank(st) && st.length()>5){
+			System.out.println(st.substring(0,5));
+		}
 		
 		return "END";
     }

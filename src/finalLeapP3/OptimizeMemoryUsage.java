@@ -22,11 +22,23 @@ public class OptimizeMemoryUsage {
 		for(int x:fore) {
 			if(x<=k && x>max) max = x; 
 		}
+		int maxB = 0;
 		if(max < k) {
+			
 			for(int x:back) {
 				if(max+x <= k) max = max+x;
+				if(x<=k) maxB = Math.max(maxB, x);
 			}
 		}
+		if(max<k) {
+			if(maxB==k) max = maxB;
+			else {
+				for(int x:fore) {
+					if(maxB+x <= k) max = Math.max(maxB+x, max);
+				}
+			}
+		}
+		System.out.println("- "+max);
 		List<List<Integer>> res = new ArrayList<>();
 		HashMap<Integer,Integer> map = new HashMap<>();
 		map.put(0, -1);

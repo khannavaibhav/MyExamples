@@ -16,8 +16,14 @@ public class ACopy {
 		//substr2();
 		
 		//marks();
-		//dateFormat1(sbm);
+		dateFormat1();
 		
+		//StringBuilder sbcd = paperRoll();
+		//System.out.println(sbcd.substring(0, sbcd.length() -2));
+		
+	}
+
+	private static StringBuilder paperRoll() {
 		String cmdty = "NEW Paper Roll.";
 		
 		String[] cdl = cmdty.split("\r\n");
@@ -51,9 +57,7 @@ public class ACopy {
 			else sbcd.append(l);
 			sbcd.append("\r\n");
 		}
-		
-		System.out.println(sbcd.substring(0, sbcd.length() -2));
-		
+		return sbcd;
 	}
 
 	private static void marks() {
@@ -81,9 +85,16 @@ public class ACopy {
 		System.out.println(sbm.substring(0, sbm.length() -2));
 	}
 
-	private static void dateFormat1(StringBuilder sbm) {
+	private static void dateFormat1() {
 		
+		StringBuilder sbm = new StringBuilder();
 		SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+		
+		Date currentDate = Calendar.getInstance(TimeZone.getTimeZone("")).getTime();
+		
+		
+		SimpleDateFormat a = new SimpleDateFormat("yyyy-MM-dd hh:mm aa");
+		System.out.println("AM?PM "+a.format(currentDate));
 		
 		Calendar  sailDate = Calendar.getInstance();
 		System.out.println(sailDate.getTime());
@@ -98,6 +109,23 @@ public class ACopy {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		System.out.println("AAA "+Calendar.getInstance(TimeZone.getTimeZone("Europe/Madrid")).getTime());
+		
+		Date date = new Date();
+		
+		try {
+			DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+			df.setTimeZone(TimeZone.getTimeZone("Europe/Madrid"));
+			System.out.println("Date string Madrid: " + df.format(date));
+			DateFormat dff = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+			date = dff.parse(df.format(date));
+			System.out.println("Date and time in Madrid: " + date);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
 
 	private static void substr2() {
@@ -120,6 +148,10 @@ public class ACopy {
 		c = c.substring(0,c.indexOf("I"));
 		System.out.println(c);
 		System.out.println(s.solution().toString());
+		
+		c = "MATS3419218000";
+		c = c.substring(4,11);
+		System.out.println(c);
 	}
 
 	/**j

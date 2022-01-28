@@ -1,4 +1,4 @@
-package finalLeapP2;
+package Post.Matrix;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -11,8 +11,6 @@ public class ACopy {
 
 	public static void main(String[] args) {
 		ACopy s = new ACopy();
-		
-		
 		
 		System.out.println(s.solution().toString());
 	}

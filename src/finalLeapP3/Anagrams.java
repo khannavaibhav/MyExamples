@@ -13,7 +13,7 @@ public class Anagrams {
 		Anagrams s = new Anagrams();
 		List<String> l = new ArrayList<>();
 		Set<String> set = new HashSet<>();
-		s.solution("aabc","",l,set);
+		s.solution("abc","",l,set);
 		System.out.println(l);
 		System.out.println(set);
 		
@@ -31,7 +31,7 @@ public class Anagrams {
 		}
 		for(int i = 0;i<s.length();i++) {
 			String rem = s.substring(0,i) + s.substring(i+1);
-			solution(rem, r+s.charAt(i), l, set);
+			if(!set.contains(r+s.charAt(i))) solution(rem, r+s.charAt(i), l, set);
 		}
     }
 	
