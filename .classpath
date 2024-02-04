@@ -6,16 +6,45 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/work/lib/JARS/commons-lang-2.6.jar"/>
-	<classpathentry kind="lib" path="C:/Users/vkhanna/.m2/repository/org/apache/commons/commons-lang3/3.5/commons-lang3-3.5.jar" sourcepath="C:/Users/vkhanna/.m2/repository/org/apache/commons/commons-lang3/3.5/commons-lang3-3.5-sources.jar">
+	<classpathentry kind="lib" path="C:/work/lib/mysql-connector-java-5.1.48.jar"/>
+	<classpathentry kind="lib" path="C:/Users/vkhanna/.m2/repository/org/apache/poi/poi-ooxml/5.2.2/poi-ooxml-5.2.2.jar" sourcepath="C:/Users/vkhanna/.m2/repository/org/apache/poi/poi-ooxml/5.2.2/poi-ooxml-5.2.2-sources.jar">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
-			<attribute name="org.eclipse.jst.component.archivename" value="commons-lang3-3.5.jar"/>
-			<attribute name="maven.groupId" value="org.apache.commons"/>
-			<attribute name="maven.artifactId" value="commons-lang3"/>
-			<attribute name="maven.version" value="3.5"/>
+			<attribute name="org.eclipse.jst.component.archivename" value="poi-ooxml-5.2.2.jar"/>
+			<attribute name="maven.groupId" value="org.apache.poi"/>
+			<attribute name="maven.artifactId" value="poi-ooxml"/>
+			<attribute name="maven.version" value="5.2.2"/>
 			<attribute name="maven.scope" value="compile"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/vkhanna/.m2/repository/org/apache/poi/poi/5.2.2/poi-5.2.2.jar" sourcepath="C:/Users/vkhanna/.m2/repository/org/apache/poi/poi/5.2.2/poi-5.2.2-sources.jar">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="org.eclipse.jst.component.archivename" value="poi-5.2.2.jar"/>
+			<attribute name="maven.groupId" value="org.apache.poi"/>
+			<attribute name="maven.artifactId" value="poi"/>
+			<attribute name="maven.version" value="5.2.2"/>
+			<attribute name="maven.scope" value="compile"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/work/lib/commons-collections4-4.4.jar"/>
+	<classpathentry kind="lib" path="C:/work/lib/commons-lang-2.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/vkhanna/.m2/repository/org/apache/commons/commons-lang3/3.12.0/commons-lang3-3.12.0.jar" sourcepath="C:/Users/vkhanna/.m2/repository/org/apache/commons/commons-lang3/3.12.0/commons-lang3-3.12.0-sources.jar">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="org.eclipse.jst.component.archivename" value="commons-lang3-3.12.0.jar"/>
+			<attribute name="maven.groupId" value="org.apache.commons"/>
+			<attribute name="maven.artifactId" value="commons-lang3"/>
+			<attribute name="maven.version" value="3.12.0"/>
+			<attribute name="maven.scope" value="compile"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/vkhanna/.m2/repository/commons-io/commons-io/2.11.0/commons-io-2.11.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/vkhanna/.m2/repository/log4j/log4j/1.2.17/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="C:/Users/vkhanna/.m2/repository/org/apache/logging/log4j/log4j-api/2.17.2/log4j-api-2.17.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/vkhanna/.m2/repository/org/apache/logging/log4j/log4j-core/2.2a/log4j-core-2.2a.jar"/>
+	<classpathentry kind="lib" path="C:/Users/vkhanna/.m2/repository/org/apache/commons/commons-compress/1.21/commons-compress-1.21.jar"/>
+	<classpathentry kind="lib" path="C:/Users/vkhanna/.m2/repository/org/apache/poi/poi-ooxml-lite/5.2.2/poi-ooxml-lite-5.2.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/vkhanna/.m2/repository/org/apache/xmlbeans/xmlbeans/5.0.3/xmlbeans-5.0.3.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
